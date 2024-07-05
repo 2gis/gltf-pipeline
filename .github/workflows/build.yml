@@ -14,7 +14,8 @@ jobs:
         node-version: 18.5.0
     - run: npm install
     - run: npm install -g pkg
-    - run: pkg . --targets latest-${{ matrix.os }}-x64
+    - run: pkg . --targets latest-${{ matrix.os }}-x64 -o gltf-pipeline
+    - run: pkg . --targets latest-${{ matrix.os }}-arm64 -o gltf-pipeline-arm
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
